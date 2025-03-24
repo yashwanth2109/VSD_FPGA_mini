@@ -1,4 +1,4 @@
-PURPOSE OF THE MODULE:
+#PURPOSE OF THE MODULE:
 
 The purpose of the module named “top” is used to implement a FPGA RGB LED controller which uses an internal oscillator(clock) and a counter(to create a slower clock signal for testing) 
 to set the LED to emit blue light while keeping the red and green off.
