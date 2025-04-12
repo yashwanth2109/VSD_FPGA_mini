@@ -66,7 +66,20 @@ set_io  hw_clk 20       => HARDWARE CLOCK  pin 20 in pin assignments = (IOB_25b_
 
 set_io  testwire 17     => TESTWIRE pin 17 in pin assignments        = (IOB_33b_SPI_SI)
 
+# Build & Flash Instructions
 
+Clone the Repository
+
+    git clone https://github.com/Skandakm29/VsdSquadron_mini_fpga-.git
+
+    cd VsdSquadron_mini_fpga-
+ 
+Compile and Flash the FPGA
+
+    make build
+    make flash
+
+# Video Output
 
 
 # Task 2:
