@@ -69,12 +69,12 @@ set_io  testwire 17     => TESTWIRE pin 17 in pin assignments        = (IOB_33b_
 
 
 
-#Task 2:
+# Task 2:
 UART (Universal Asynchronous Receiver-Transmitter) is a serial communication protocol used for asynchronous data transfer between devices. It does not require a separate clock signal; instead, it uses a baud rate to synchronize communication.
 
 UART loopback is a special mode where the transmitted (TX) data is directly routed to the receiver (RX), allowing self-testing without external connections.
 
-##Study the Existing Code:
+## Study the Existing Code:
 clk - system clock signal (input)
 
 txbyte - 8bit input to be transmitted
@@ -85,7 +85,7 @@ txdone = flag that indicates whether the data is transmitted or not
 
     tx = TX wire 
 
-##This module is a FINITE STATE MACHINE with four states:
+## This module is a FINITE STATE MACHINE with four states:
 
     STATE_IDLE = 8’d0 - Module waits in the state until senddata is high
 
@@ -95,7 +95,7 @@ txdone = flag that indicates whether the data is transmitted or not
 
     STATE_TXDONE = 8’d0 - Sending stop bit and module returns to idle state
 
-##Internal Registers and Wires:
+## Internal Registers and Wires:
 
     reg[7:0] state = 8'b0; // Holds the current state of the FSM
 
@@ -109,7 +109,7 @@ txdone = flag that indicates whether the data is transmitted or not
 
     assign tx = txbit; // Assign txbit register to the output tx pin
 
-##Logic:
+# Logic:
 
     if (senddata == 1 && state == STATE_IDLE) begin
     state <= STATE_STARTTX; // Move to start bit state
@@ -159,7 +159,7 @@ Once the transmission is done and the state is in TXDONE, the txdone flag is set
 
 state is set to STATE_IDLE 
 
-##Direct Connection Logic
+## Direct Connection Logic
 
     assign uarttx = uartrx;
 Any data sent on uarttx is instantly received on uartrx.
@@ -168,17 +168,17 @@ This eliminates the need for external connections during testing.
 
 Helps debug UART transmission in an FPGA-based system.
 
-##BLOCK DIAGRAM FOR UART LOOPBACK:
+# BLOCK DIAGRAM FOR UART LOOPBACK:
 
 
 
 
 
-##CIRCUIT DIAGRAM FOR UART LOOPBACK
+# CIRCUIT DIAGRAM FOR UART LOOPBACK
 
 
 
-##Testing and Output
+# Testing and Output
 
 Clone & Setup Repository
 
@@ -212,20 +212,20 @@ Received Data (RX)
 I - II
 H - HH
 
-##Video Output
+# Video Output
 
 
 
-$Tash 3:
-##UART Transmitter Module
-##Overview
+# Task 3:
+# UART Transmitter Module
+## Overview
 This module implements an 8N1 UART Transmitter, enabling serial data transmission using an 8-bit data frame, no parity bit, and 1 stop
 
 bit. It generates a 9600 baud clock from a 12 MHz oscillator and provides a simple state-machine-based transmission mechanism.The code
 
 for this module can accessed here.
 
-##Study the Existing Code
+# Study the Existing Code
 Understanding the code
 
 Internal Oscillator - Generates the main clock signal (clk_out).
@@ -258,7 +258,7 @@ Decodes certain data values (e.g., ASCII characters or specific codes) to light 
 
 UART Transmitter (TX) - Transmits the loopback data 
 
-##Program Flow:
+# Program Flow:
 Data flow:
 
 Clock Signal: The Internal Oscillator drives entire system.
@@ -270,7 +270,7 @@ UART RX also sends data → RGB LED controller → LED color changes.
 
 Frequency Counter: Monitors clock → Could send data via UART TX.
 
-##Your UART terminal received:
+## Your UART terminal received:
 kotlin
 
 CopyEdit
@@ -287,7 +287,7 @@ So you typed '4/' in the terminal, and it correctly looped back and displayed th
 
 and TX paths are working.
 
-##State Machine States:
+## State Machine States:
 
     IDLE STATE (STATE_IDLE)
 If senddata = 1 and the state is STATE_IDLE, it:
@@ -338,13 +338,13 @@ Sets txdone = 1 (indicates transmission complete).
 
 Returns to STATE_IDLE.
 
-##System Architecture
+# System Architecture
 
-##Block diagram
+# Block diagram
 
-##Circuit diagram
+# Circuit diagram
 
-##Programming and Synthesis
+# Programming and Synthesis
 
 Clone & Setup Repository
 
@@ -372,14 +372,14 @@ If this shows an error in picocom:
     sudo apt install picocom
 Remove and Reconnect the USB and make sure to select it again in the devices before running the terminal
 
-##Video Output
+# Video Output
 
 
 
 
 
-#Task 4:
-##Architecture Summary
+# Task 4:
+## Architecture Summary
 The sense_uart_tx module facilitates structured and sensor-based UART data transmission. The core components of this architecture are:
 
 Sensor Data Processing
@@ -390,7 +390,7 @@ UART Data Transfer Mechanism
 
 State Machine for Transmission Control
 
-##Functional Workflow
+## Functional Workflow
 Sensor Data Acquisition - Sensor readings are captured at specific time intervals. The data_valid signal flags when new data is ready to
 
 be sent. A 32-bit buffer temporarily stores sensor values before transmission.
@@ -414,13 +414,13 @@ Controlled state transitions ensure accurate communication timing.
 
 
 
-##Transmission Status Indicators
+## Transmission Status Indicators
 
 tx_done indicates the end of a transmission cycle.
 
 ready ensures the module can handle back-to-back sensor data without loss.
 
-##Port Descriptions
+## Port Descriptions
 
 Clock and Reset
 
@@ -428,18 +428,18 @@ clk: Governs all synchronous logic.
 
 reset_n: Resets internal states and modules.
 
-##Sensor Inputs
+## Sensor Inputs
 
 sensor_data [31:0]: 32-bit input from the sensor block.
 
 data_valid: Signals the availability of new sensor data.
 
-##UART Output Signal
+## UART Output Signal
 
 tx_out: Carries the UART-encoded serial data to external devices.
 
 
-##Control Signals
+## Control Signals
 
 tx_start: Begins the UART transmission process.
 
@@ -449,7 +449,7 @@ tx_done: Indicates that data transmission has completed.
 
 ready: Confirms the system is prepared for the next transmission.
 
-##Internal Design Components
+## Internal Design Components
 
 Finite State Machine (FSM):
 
@@ -463,16 +463,15 @@ STOP: Transmits the final stop bit (1).
 
 DONE: Asserts tx_done and resets to the IDLE state.
 
-
 Baud Generator - Utilizes clock division to generate a precise 9600 Hz baud signal.
 
 Shift Register - Temporarily stores the full 32-bit sensor data. Shifts out 8-bit chunks with each transmission cycle.
 
-##Block Diagram 
+# Block Diagram 
 
-##Circuit Diagram
+# Circuit Diagram
 
-##Programming and Synthesis
+# Programming and Synthesis
 
 Clone & Setup Repository
 
@@ -499,6 +498,8 @@ If this shows an error in picocom:
 
     sudo apt install picocom
 Remove and Reconnect the USB and make sure to select it again in the devices before running the terminal
+
+# Video Output
 
 
 
