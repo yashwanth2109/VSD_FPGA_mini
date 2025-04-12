@@ -183,7 +183,7 @@ Helps debug UART transmission in an FPGA-based system.
 
 # BLOCK DIAGRAM FOR UART LOOPBACK:
 
-
+https://github.com/yashwanth2109/VSD_FPGA_mini/blob/main/Task%202%20BD.png?raw=true
 
 # CIRCUIT DIAGRAM FOR UART LOOPBACK
 
