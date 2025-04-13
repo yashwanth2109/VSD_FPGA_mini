@@ -354,12 +354,12 @@ Returns to STATE_IDLE.
 
 # System Architecture
 
-# Block diagram
+# Circuit diagram
 
 ![Image](https://github.com/user-attachments/assets/93a868e5-8212-4010-9d19-6c88a1c4461f)
 
 
-# Circuit diagram
+# Block diagram
 
 ![Image](https://github.com/user-attachments/assets/2f3548ea-210d-47e4-89cb-de6b6b667abd)
 
@@ -490,7 +490,11 @@ Shift Register - Temporarily stores the full 32-bit sensor data. Shifts out 8-bi
 
 # Block Diagram 
 
+![Image](https://github.com/user-attachments/assets/ac76cd3a-a78a-4627-bbe9-fc0437238db9)
+
 # Circuit Diagram
+
+![Image](https://github.com/user-attachments/assets/28d3f472-c836-48c9-820f-11b9e07931da)
 
 # Programming and Synthesis
 
@@ -527,7 +531,7 @@ https://github.com/user-attachments/assets/dba22279-39f0-445d-a74d-769c01abd376
 
 
 
-# PROJ - Real time Sensor Data Acquisition and Transmission System:
+# PROJECT - Real time Sensor Data Acquisition and Transmission System:
 ## Introduction
 This report presents a complete design for a real-time sensor-based measurement and communication system using an FPGA. The system measures distance using the HC-SR04 ultrasonic sensor, 
 
@@ -1062,6 +1066,8 @@ Uploads the bitstream to the FPGA board using iceprog or similar.
 Launches a terminal window (e.g., using screen or minicom) at 9600 baud to monitor the distance readings. (Serial Terminal)
 
 # Video Output
+
+https://github.com/user-attachments/assets/5a92950a-49de-4bc7-b689-9e6aeaa5128a
 
 # Conclusion
 This project successfully implements a real-time sensor interface using FPGA:\
