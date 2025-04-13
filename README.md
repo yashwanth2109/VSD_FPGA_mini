@@ -227,7 +227,7 @@ I - II
 H - HH
 
 # Video Output
-
+https://github.com/user-attachments/assets/20ff0efa-2ef5-41c7-890f-f246736cc795
 
 
 # Task 3:
