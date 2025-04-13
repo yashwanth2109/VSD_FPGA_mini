@@ -553,7 +553,11 @@ using a USB-to-Serial adapter.
 
  # Block Diagram
 
+ ![Image](https://github.com/user-attachments/assets/3c138c13-4ce2-451f-b51d-4eeb65809072)
+
  # Circuit Diagram
+
+ ![Image](https://github.com/user-attachments/assets/fd626953-c339-4fa2-a0ae-04fafcc82537)
 
 # Verilog Modules
 ## UART Transmitter – uart_tx_8n1.v
