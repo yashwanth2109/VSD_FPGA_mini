@@ -81,6 +81,10 @@ Compile and Flash the FPGA
 
 # Video Output
 
+https://github.com/user-attachments/assets/9cbd1d75-d844-45b5-a4e9-73b0fb15277a
+
+
+
 
 # Task 2:
 UART (Universal Asynchronous Receiver-Transmitter) is a serial communication protocol used for asynchronous data transfer between devices. It does not require a separate clock signal; instead, it uses a baud rate to synchronize communication.
@@ -183,11 +187,10 @@ Helps debug UART transmission in an FPGA-based system.
 
 # BLOCK DIAGRAM FOR UART LOOPBACK:
 
-https://github.com/yashwanth2109/VSD_FPGA_mini/blob/main/Task%202%20BD.png?raw=true
+![Image](https://github.com/user-attachments/assets/7a4f7f77-5763-4e6a-a678-f19fc70d71c3)
 
 # CIRCUIT DIAGRAM FOR UART LOOPBACK
-
-
+ ![Image](https://github.com/user-attachments/assets/e4b5eed7-4945-4277-99c0-d7d4b17fd960)
 
 # Testing and Output
 
@@ -353,7 +356,12 @@ Returns to STATE_IDLE.
 
 # Block diagram
 
+![Image](https://github.com/user-attachments/assets/93a868e5-8212-4010-9d19-6c88a1c4461f)
+
+
 # Circuit diagram
+
+![Image](https://github.com/user-attachments/assets/2f3548ea-210d-47e4-89cb-de6b6b667abd)
 
 # Programming and Synthesis
 
@@ -384,6 +392,8 @@ If this shows an error in picocom:
 Remove and Reconnect the USB and make sure to select it again in the devices before running the terminal
 
 # Video Output
+
+https://github.com/user-attachments/assets/d3a37f0b-0511-4e0e-be31-a68e053cb7b2
 
 
 
@@ -511,6 +521,10 @@ If this shows an error in picocom:
 Remove and Reconnect the USB and make sure to select it again in the devices before running the terminal
 
 # Video Output
+https://github.com/user-attachments/assets/dba22279-39f0-445d-a74d-769c01abd376
+
+
+
 
 
 # PROJ - Real time Sensor Data Acquisition and Transmission System:
