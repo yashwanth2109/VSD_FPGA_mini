@@ -285,9 +285,6 @@ UART RX also sends data → RGB LED controller → LED color changes.
 Frequency Counter: Monitors clock → Could send data via UART TX.
 
 ## Your UART terminal received:
-kotlin
-
-CopyEdit
 
     Recieved data= 52
     Recieved data= 47
