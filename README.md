@@ -1087,6 +1087,10 @@ Optional local display using RGB LEDs
 
 The design provides a foundation that can be expanded with additional sensor types, error correction, or enhanced UART configurations.
 
+# Acknowledgements 
+Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. Nickson P Jose, Physical Design Engineer, Intel Corporation. 
+
+
 
 
 
